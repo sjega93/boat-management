@@ -1,19 +1,12 @@
-let express = require('express'),
-    cors = require('cors'),
-    mongoose = require('mongoose'),
-    database = require('./database'),
-    bodyParser = require('body-parser')
-    createError = require('http-errors')
+express = require('express'),
+cors = require('cors'),
+mongoose = require('mongoose'),
+bodyParser = require('body-parser')
+createError = require('http-errors')
+const boatRoutes = require('../backend/routes/BouteRoute');
 
-    mongoose.Promise = global.Promise;
-    mongoose.connect(database.db, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }).then(() => {
-        console.log('Database connected succesfully');
-    })
 
-    const studentAPI = require('../backend/routes/student.route');
+    
     const app = express();
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({
@@ -22,7 +15,7 @@ let express = require('express'),
     app.use(cors());
 
     // API
-    app.use('/api', studentAPI);
+    app.use('/api', boatRoutes);
 
     // create port
     const port = process.env.PORT || 4000;
