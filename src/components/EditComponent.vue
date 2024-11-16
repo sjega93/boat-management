@@ -1,19 +1,15 @@
 <template lang="">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h1>Edit Data</h1>
+            <h1>Edit Boat</h1>
             <form @submit.prevent="handleUpdateForm">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" v-model="student.name" required>
+                    <input type="text" class="form-control" v-model="Boat.name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" v-model="student.email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="text" class="form-control" v-model="student.phone" required>
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" v-model="Boat.description" required>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block">Update</button>
@@ -28,19 +24,22 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            student: {}
+            Boat: {
+                name: '',
+                description: '',
+            }
         }
     },
     created() {
-        let apiURL = `http://localhost:4000/api/edit-student/${this.$route.params.id}`;
+        let apiURL = `http://localhost:4000/api/${this.$route.params.id}`;
         axios.get(apiURL).then((res) => {
-            this.student = res.data
+            this.Boat = res.data
         })
     },
     methods: {
         handleUpdateForm() {
-            let apiURL = `http://localhost:4000/api/edit-student/${this.$route.params.id}`;
-            axios.put(apiURL, this.student).then((res) => {
+            let apiURL = `http://localhost:4000/api/${this.$route.params.id}`;
+            axios.put(apiURL, this.Boat).then((res) => {
                 console.log(res);
                 this.$router.push('/view')
             }).catch(error => {

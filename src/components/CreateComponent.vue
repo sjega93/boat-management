@@ -1,19 +1,15 @@
 <template>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h1>Create Student</h1>
+            <h1>Create Boat</h1>
             <form @submit.prevent="handleSubmitForm">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" v-model="student.name" required>
+                    <input type="text" class="form-control" v-model="Boat.name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" v-model="student.email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="text" class="form-control" v-model="student.phone" required>
+                    <label for="description">Desciption</label>
+                    <input type="text" class="form-control" v-model="Boat.description" required>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success btn-block">Create</button>
@@ -28,24 +24,22 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            student: {
+            Boat: {
                 name: '',
-                email: '',
-                phone: '',
+                description: '',
             }
             
         }
     },
     methods: {  
         handleSubmitForm() {
-            let apiURL = 'http://localhost:4000/api/create-student';
+            let apiURL = 'http://localhost:4000/api/';
 
-            axios.post(apiURL, this.student).then(() => {
+            axios.post(apiURL, this.Boat).then(() => {
                 this.$router.push('/view');
-                this.student = {
+                this.Boat = {
                     name: '',
-                    email: '',
-                    phone: ''
+                    description: ''
                 }
             }).catch(error => {
                 console.log(error)
