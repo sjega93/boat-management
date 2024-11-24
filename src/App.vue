@@ -8,10 +8,10 @@
                 <router-link :to="{ path: '/' }" class="navbar-brand float-left">CRUD Project</router-link>
             <ul class="nav navbar-nav flex-row float-right">
                 <li class="nav-item">
-                    <router-link to="/" class="nav-link pr-3">Create Student</router-link>
+                    <router-link to="/create" class="nav-link pr-3">Create Boat</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/view" class="nav-link pr-3">View Students</router-link>
+                    <router-link to="/view" class="nav-link pr-3">View Boats</router-link>
                 </li>
             </ul>
             </div>

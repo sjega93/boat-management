@@ -5,7 +5,7 @@ import ListComponent from "../components/ListComponent.vue";
 
 const routes = [
     {
-        path: "/",
+        path: "/create",
         name: "home",
         component: CreateComponent, 
     },
