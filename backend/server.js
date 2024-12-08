@@ -3,6 +3,7 @@ cors = require('cors'),
 mongoose = require('mongoose'),
 bodyParser = require('body-parser')
 createError = require('http-errors')
+const serverless = require('serverless-http');
 const boatRoutes = require('../backend/routes/BouteRoute');
 
 
@@ -34,3 +35,4 @@ app.use(function(err, req, res, next) {
     if (!err.statusCode) err.statusCode = 500;
     res.status(err.statusCode).send(err.message)
 })
+module.exports.handler = serverless(app);

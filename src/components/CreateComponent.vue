@@ -3,12 +3,12 @@
         <div class="col-md-6">
             <h1>Create Boat</h1>
             <form @submit.prevent="handleSubmitForm">
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" v-model="Boat.name" required>
                 </div>
-                <div class="form-group">
-                    <label for="description">Desciption</label>
+                <div class="form-group mb-3">
+                    <label for="description">Description</label>
                     <input type="text" class="form-control" v-model="Boat.description" required>
                 </div>
                 <div class="form-group">
@@ -18,6 +18,7 @@
         </div>
     </div>
 </template>
+
 <script>
 import axios from 'axios';
 
@@ -28,10 +29,9 @@ export default {
                 name: '',
                 description: '',
             }
-            
-        }
+        };
     },
-    methods: {  
+    methods: {
         handleSubmitForm() {
             let apiURL = 'http://localhost:4000/api/';
 
@@ -40,11 +40,11 @@ export default {
                 this.Boat = {
                     name: '',
                     description: ''
-                }
+                };
             }).catch(error => {
-                console.log(error)
-            })
+                console.log(error);
+            });
         }
     }
-}
+};
 </script>
