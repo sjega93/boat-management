@@ -1,32 +1,26 @@
 <template lang="">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h1>Boat Overview</h1>
+            <h1>Show Boats</h1>
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-striped">
                         <thead class="thead-dark">
                             <tr>
-                                <th>BoatName</th>
-                                <th>Actions</th>
+                                <th>Name</th>
+                                <th>Description</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="boat in Boats" :key="boat._id">
+                                <td>{{ boat.name }}</td>
                                 <td>
-                                    <router-link :to="{ name: 'boatDetail', params: { id: boat._id } }">
-                                        {{ boat.name }}
+                                    <router-link :to="{name: 'edit', params: {id: boat._id}}" class="btn btn-success">
+                                        Edit
                                     </router-link>
-                                </td>
-                                <td>
-                                    <div class="d-flex gap-2">
-                                        <router-link :to="{ name: 'edit', params: { id: boat._id } }" class="btn btn-success">
-                                            Edit
-                                        </router-link>
-                                        <button @click.prevent="deleteBoat(boat._id)" class="btn btn-danger">
-                                            Delete
-                                        </button>
-                                    </div>
+                                    <button @click.prevent="deleteBoat(boat._id)" class="btn btn-danger">
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -55,7 +49,7 @@ export default {
     },
     methods: {
         deleteBoat(id) {
-            let apiURL = `http://localhost:4000/api/${id}`;
+            let apiURL = 'http://localhost:4000/api/${id}';
             let indexOfArrayItem = this.Boats.findIndex(i => i._id === id);
 
             if (window.confirm("Do you really want to delete?")) {
