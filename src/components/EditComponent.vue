@@ -8,8 +8,20 @@
                     <input type="text" class="form-control" v-model="Boat.name" required>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="description">Description</label>
-                    <input type="text" class="form-control" v-model="Boat.description" required>
+                    <label for="description">Year</label>
+                    <input type="text" class="form-control" v-model="Boat.year" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" v-model="Boat.location" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="value">Value [CHF]</label>
+                    <input type="text" class="form-control" v-model="Boat.value" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="description">Additional Information</label>
+                    <input type="text" class="form-control" v-model="Boat.description">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block">Update</button>
@@ -28,6 +40,9 @@ export default {
             Boat: {
                 name: '',
                 description: '',
+                location: '',
+                year: '',
+                value: ''
             }
         }
     },
