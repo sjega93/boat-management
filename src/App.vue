@@ -8,11 +8,11 @@
 
 <template>
   <authenticator>
-    <template v-slot="{ user, signOut }">
+    <template v-slot="{signOut }">
       <div>
         <nav class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row">
           <div class="container">
-            <router-link :to="{ path: '/' }" class="navbar-brand float-left">CRUD Project</router-link>
+            <router-link :to="{ path: '/' }" class="navbar-brand float-left">BoatApp Management</router-link>
             <ul class="nav navbar-nav flex-row float-right">
               <li class="nav-item">
                 <router-link to="/create" class="nav-link pr-3">Create Boat</router-link>
