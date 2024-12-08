@@ -3,6 +3,7 @@ import CreateComponent from "../components/CreateComponent.vue";
 import EditComponent from "../components/EditComponent.vue";
 import ListComponent from "../components/ListComponent.vue";
 import OverviewComponent from "../components/OverviewComponent.vue";
+import DetailView from "../components/DetailViewComponent.vue";
 const routes = [
     {
         path: "/home",
@@ -18,6 +19,11 @@ const routes = [
         path: "/view",
         name: "view",
         component: ListComponent,
+    },
+    {
+        path: '/boat/:id',
+        name: 'boatDetail',
+        component: DetailView
     },
     {
         path: "/edit/:id",
