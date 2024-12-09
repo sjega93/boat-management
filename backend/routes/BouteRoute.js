@@ -1,7 +1,8 @@
-const express = require('express')
+import express from 'express';
+import BoatModel from '../models/Boat.js';
+
 const BoatRoute = express.Router();
 
-let BoatModel = require('../models/Boat');
 
 // Get Boats
 BoatRoute.route('/').get((req, res, next) =>{
@@ -61,4 +62,4 @@ BoatRoute.route('/:id').delete((req, res, next) => {
         }
     })
 })
- module.exports = BoatRoute
+export default BoatRoute;

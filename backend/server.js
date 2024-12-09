@@ -1,11 +1,10 @@
-express = require('express'),
-cors = require('cors'),
-mongoose = require('mongoose'),
-bodyParser = require('body-parser')
-createError = require('http-errors')
-const serverless = require('serverless-http');
-const boatRoutes = require('../backend/routes/BouteRoute');
-
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import createError from 'http-errors';
+import serverless from 'serverless-http';
+import boatRoutes from './routes/BouteRoute.js';
 
     
     const app = express();
@@ -35,4 +34,4 @@ app.use(function(err, req, res, next) {
     if (!err.statusCode) err.statusCode = 500;
     res.status(err.statusCode).send(err.message)
 })
-module.exports.handler = serverless(app);
+export const handler = serverless(app);
