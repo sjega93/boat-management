@@ -1,22 +1,45 @@
-# vuejs-crud-expressjs
-- View my project website = https://prachpaveeny.github.io/vuejs-crud-expressjs/
-- Project : Vue.js-CRUD-Express.js
-- Can create data, modify data, delete data by connecting to MongoDB
-- Tools = Node.js(Express.js), MongoDB, Vue.js
-</br>
+Boat Management Application
+This project is a web-based boat management application. The frontend is built using Vue.js and is deployed on AWS Amplify, while the backend is built with ExpressJS and deployed as AWS Lambda functions. The application leverages AWS Cognito for authentication, which was seamlessly integrated using AWS Amplify. The database is hosted on MongoDB Cloud.
 
-## ขั้นตอนการ Run project
-- Run command (Front-end) :
-    ```
-    $ cd vuejs-crud-expressjs >> npm install >> npm run dev
-    ```
-- Run command (Back-end) :
-    ```
-    $ cd backend >> npm install >> npm run dev
-    ```
+Application URL
+The application is accessible at:
+https://staging.d5lx60d5yh9n4.amplifyapp.com
+
+Features
+Frontend: Built using Vue.js for a responsive and dynamic user experience.
+Backend: Implemented with ExpressJS, and deployed using AWS Lambda for serverless architecture.
+Authentication: Managed with AWS Cognito, integrated via AWS Amplify.
+Database: Hosted on MongoDB Cloud for scalable and secure data storage.
 
 
- </br></br>
+Running the Application Locally
 
-<img src="./img/crud-vue01.png" width="900" hight="400"/>
+Prerequisites:
+Ensure you have the following installed:
 
+Node.js 
+
+Frontend Setup
+Navigate to the frontend directory:
+
+$ cd BOAT-MANAGEMENT
+Install dependencies:
+
+$ npm install
+Start the development server:
+
+$ npm run dev
+
+
+Backend Setup
+Navigate to the backend directory:
+
+$ cd backend
+
+Install dependencies:
+
+$ npm install
+
+Start the development server:
+
+$ npm run dev
