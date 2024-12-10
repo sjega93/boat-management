@@ -11,9 +11,6 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@aws-sdk/client-ssm": "^3.699.0",
-    "aws-amplify": "^6.10.2",
-    "aws-sdk": "^2.1692.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.21.1",
@@ -23,7 +20,7 @@
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.8.0",
-    "@aws-amplify/backend-cli": "^1.4.2",
+    "@aws-sdk/client-ssm": "^3.699.0",
     "aws-cdk": "^2.171.1",
     "aws-cdk-lib": "^2.171.1",
     "constructs": "^10.4.2",
