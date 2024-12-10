@@ -48,7 +48,7 @@ export default {
     },
     methods: {
         handleSubmitForm() {
-            let apiURL = 'http://localhost:4000/api/';
+            let apiURL = 'https://wxevu5rertmsowcflgfnchf3ua0flgdh.lambda-url.eu-central-1.on.aws/api/';
 
             axios.post(apiURL, this.Boat).then(() => {
                 this.$router.push('/view');

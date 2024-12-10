@@ -46,7 +46,7 @@ export default {
         }
     },
     created() {
-        let apiURL = 'http://localhost:4000/api';
+        let apiURL = 'https://wxevu5rertmsowcflgfnchf3ua0flgdh.lambda-url.eu-central-1.on.aws/api';
         axios.get(apiURL).then(res => {
             this.Boats = res.data
         }).catch(error => {
@@ -55,7 +55,7 @@ export default {
     },
     methods: {
         deleteBoat(id) {
-            let apiURL = `http://localhost:4000/api/${id}`;
+            let apiURL = `https://wxevu5rertmsowcflgfnchf3ua0flgdh.lambda-url.eu-central-1.on.aws/api/${id}`;
             let indexOfArrayItem = this.Boats.findIndex(i => i._id === id);
 
             if (window.confirm("Do you really want to delete?")) {

@@ -47,14 +47,14 @@ export default {
         }
     },
     created() {
-        let apiURL = `http://localhost:4000/api/${this.$route.params.id}`;
+        let apiURL = `https://wxevu5rertmsowcflgfnchf3ua0flgdh.lambda-url.eu-central-1.on.aws/api/${this.$route.params.id}`;
         axios.get(apiURL).then((res) => {
             this.Boat = res.data;
         });
     },
     methods: {
         handleUpdateForm() {
-            let apiURL = `http://localhost:4000/api/${this.$route.params.id}`;
+            let apiURL = `https://wxevu5rertmsowcflgfnchf3ua0flgdh.lambda-url.eu-central-1.on.aws/api/${this.$route.params.id}`;
             axios.put(apiURL, this.Boat).then((res) => {
                 console.log(res);
                 this.$router.push('/view');
